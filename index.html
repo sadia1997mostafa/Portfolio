@@ -5,147 +5,363 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sadia Mostafa - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <div class="container">
+    <nav class="navbar">
+        <div class="nav-container">
             <div class="logo">
-                <span>Sadia Mostafa</span>
+                <span class="logo-text">Sadia</span>
+                <span class="logo-accent">Mostafa</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home">
-        <div class="container">
-            <h1>Hello, I'm Sadia Mostafa</h1>
-            <p>Creative Developer & Designer</p>
-            <p>Crafting digital experiences with passion, precision, and innovation</p>
-            <a href="#projects">View My Work</a>
-            <a href="#contact">Get In Touch</a>
+    <!-- Home Section with 3D Room Environment -->
+    <section id="home" class="home-section">
+        <div class="room-3d">
+            <div class="room-floor"></div>
+            <div class="room-wall-back"></div>
+            <div class="room-ceiling"></div>
+            
+            <!-- 3D Furniture -->
+            <div class="furniture desk">
+                <div class="desk-top"></div>
+                <div class="desk-leg desk-leg-1"></div>
+                <div class="desk-leg desk-leg-2"></div>
+                <div class="desk-leg desk-leg-3"></div>
+                <div class="desk-leg desk-leg-4"></div>
+                <div class="monitor">
+                    <div class="monitor-screen">
+                        <div class="code-lines">
+                            <div class="code-line"></div>
+                            <div class="code-line"></div>
+                            <div class="code-line"></div>
+                        </div>
+                    </div>
+                    <div class="monitor-base"></div>
+                </div>
+            </div>
+            
+            <div class="furniture chair">
+                <div class="chair-seat"></div>
+                <div class="chair-back"></div>
+                <div class="chair-leg chair-leg-1"></div>
+                <div class="chair-leg chair-leg-2"></div>
+                <div class="chair-leg chair-leg-3"></div>
+                <div class="chair-leg chair-leg-4"></div>
+                <div class="chair-leg chair-leg-5"></div>
+            </div>
+            
+            <div class="furniture bookshelf">
+                <div class="shelf shelf-1"></div>
+                <div class="shelf shelf-2"></div>
+                <div class="shelf shelf-3"></div>
+                <div class="book book-1"></div>
+                <div class="book book-2"></div>
+                <div class="book book-3"></div>
+                <div class="book book-4"></div>
+            </div>
+            
+            <!-- Floating 3D Elements -->
+            <div class="floating-cubes">
+                <div class="cube cube-1">
+                    <div class="cube-face front"></div>
+                    <div class="cube-face back"></div>
+                    <div class="cube-face right"></div>
+                    <div class="cube-face left"></div>
+                    <div class="cube-face top"></div>
+                    <div class="cube-face bottom"></div>
+                </div>
+                <div class="cube cube-2">
+                    <div class="cube-face front"></div>
+                    <div class="cube-face back"></div>
+                    <div class="cube-face right"></div>
+                    <div class="cube-face left"></div>
+                    <div class="cube-face top"></div>
+                    <div class="cube-face bottom"></div>
+                </div>
+                <div class="cube cube-3">
+                    <div class="cube-face front"></div>
+                    <div class="cube-face back"></div>
+                    <div class="cube-face right"></div>
+                    <div class="cube-face left"></div>
+                    <div class="cube-face top"></div>
+                    <div class="cube-face bottom"></div>
+                </div>
+            </div>
+            
+            <!-- Ambient Lighting -->
+            <div class="ambient-light light-1"></div>
+            <div class="ambient-light light-2"></div>
+            <div class="ambient-light light-3"></div>
+        </div>
+        
+        <div class="home-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="text-animate">Hello, I'm</span>
+                    <span class="name-highlight">Sadia Mostafa</span>
+                </h1>
+                <p class="hero-subtitle">Creative Developer & Designer</p>
+                <p class="hero-description">
+                    Crafting digital experiences with passion, precision, and innovation
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="floating-tech-icons">
+                <div class="tech-icon icon-3d" style="--delay: 0s;" data-tech="html">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <div class="tech-icon icon-3d" style="--delay: 1s;" data-tech="css">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <div class="tech-icon icon-3d" style="--delay: 2s;" data-tech="js">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <div class="tech-icon icon-3d" style="--delay: 3s;" data-tech="react">
+                    <i class="fab fa-react"></i>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- About Section with 3D Book Animation -->
+    <section id="about" class="about-section">
         <div class="container">
-            <h2>About Me</h2>
-            <h3>Passionate Developer & Creative Designer</h3>
-            <p>
-                I'm a dedicated web developer with a passion for creating beautiful, 
-                functional, and user-friendly digital experiences. With expertise in 
-                modern web technologies and a keen eye for design, I bring ideas to life 
-                through code and creativity.
-            </p>
-            <div class="stats">
-                <div class="stat">
-                    <span>50+</span>
-                    <span>Projects Completed</span>
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-3d">
+                    <div class="book-3d">
+                        <div class="book-cover">
+                            <div class="book-title">My Journey</div>
+                            <div class="book-author">Sadia Mostafa</div>
+                        </div>
+                        <div class="book-spine"></div>
+                        <div class="book-back"></div>
+                        <div class="book-pages">
+                            <div class="page page-1">
+                                <div class="page-content">
+                                    <h4>Chapter 1: Passion</h4>
+                                    <p>My love for coding began...</p>
+                                </div>
+                            </div>
+                            <div class="page page-2">
+                                <div class="page-content">
+                                    <h4>Chapter 2: Growth</h4>
+                                    <p>Learning new technologies...</p>
+                                </div>
+                            </div>
+                            <div class="page page-3">
+                                <div class="page-content">
+                                    <h4>Chapter 3: Innovation</h4>
+                                    <p>Creating amazing projects...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3D Knowledge Spheres -->
+                    <div class="knowledge-spheres">
+                        <div class="sphere sphere-1" data-skill="Frontend">
+                            <div class="sphere-inner">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                        </div>
+                        <div class="sphere sphere-2" data-skill="Backend">
+                            <div class="sphere-inner">
+                                <i class="fas fa-server"></i>
+                            </div>
+                        </div>
+                        <div class="sphere sphere-3" data-skill="Design">
+                            <div class="sphere-inner">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat">
-                    <span>3+</span>
-                    <span>Years Experience</span>
-                </div>
-                <div class="stat">
-                    <span>100%</span>
-                    <span>Client Satisfaction</span>
+                <div class="about-text">
+                    <h3 class="about-title">Passionate Developer & Creative Designer</h3>
+                    <p class="about-description">
+                        I'm a dedicated web developer with a passion for creating beautiful, 
+                        functional, and user-friendly digital experiences. With expertise in 
+                        modern web technologies and a keen eye for design, I bring ideas to life 
+                        through code and creativity.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                    </div>
+                    <div class="about-buttons">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-coffee"></i> Let's Talk
+                        </a>
+                    </div>
                 </div>
             </div>
-            <a href="#">Download CV</a>
-            <a href="#contact">Let's Talk</a>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education">
+    <section id="education" class="education-section">
         <div class="container">
-            <h2>Education</h2>
-            <div class="timeline">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="education-timeline">
                 <div class="timeline-item">
-                    <h3>Bachelor of Computer Science</h3>
-                    <p>University Name</p>
-                    <span>2020 - 2024</span>
-                    <p>
-                        Specialized in Software Engineering and Web Development with a focus on 
-                        modern programming languages and frameworks.
-                    </p>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Bachelor of Computer Science</h3>
+                        <p class="timeline-institution">University Name</p>
+                        <span class="timeline-date">2020 - 2024</span>
+                        <p class="timeline-description">
+                            Specialized in Software Engineering and Web Development with a focus on 
+                            modern programming languages and frameworks.
+                        </p>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <h3>Higher Secondary Certificate</h3>
-                    <p>College Name</p>
-                    <span>2018 - 2020</span>
-                    <p>
-                        Completed with distinction in Science group, laying the foundation 
-                        for my technical career.
-                    </p>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Higher Secondary Certificate</h3>
+                        <p class="timeline-institution">College Name</p>
+                        <span class="timeline-date">2018 - 2020</span>
+                        <p class="timeline-description">
+                            Completed with distinction in Science group, laying the foundation 
+                            for my technical career.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" class="skills-section">
         <div class="container">
-            <h2>Skills & Technologies</h2>
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="title-underline"></div>
+            </div>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Frontend</h3>
+                    <h3 class="category-title">Frontend</h3>
                     <div class="skills-list">
                         <div class="skill-item">
+                            <i class="fab fa-html5"></i>
                             <span>HTML5</span>
+                            <div class="skill-level" data-level="95"></div>
                         </div>
                         <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
                             <span>CSS3</span>
+                            <div class="skill-level" data-level="90"></div>
                         </div>
                         <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
                             <span>JavaScript</span>
+                            <div class="skill-level" data-level="85"></div>
                         </div>
                         <div class="skill-item">
+                            <i class="fab fa-react"></i>
                             <span>React</span>
+                            <div class="skill-level" data-level="80"></div>
                         </div>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Backend</h3>
+                    <h3 class="category-title">Backend</h3>
                     <div class="skills-list">
                         <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
                             <span>Node.js</span>
+                            <div class="skill-level" data-level="75"></div>
                         </div>
                         <div class="skill-item">
+                            <i class="fab fa-python"></i>
                             <span>Python</span>
+                            <div class="skill-level" data-level="70"></div>
                         </div>
                         <div class="skill-item">
+                            <i class="fas fa-database"></i>
                             <span>MongoDB</span>
+                            <div class="skill-level" data-level="80"></div>
                         </div>
                         <div class="skill-item">
+                            <i class="fas fa-server"></i>
                             <span>Express.js</span>
+                            <div class="skill-level" data-level="75"></div>
                         </div>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Tools & Design</h3>
+                    <h3 class="category-title">Tools & Design</h3>
                     <div class="skills-list">
                         <div class="skill-item">
+                            <i class="fab fa-figma"></i>
                             <span>Figma</span>
+                            <div class="skill-level" data-level="85"></div>
                         </div>
                         <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
                             <span>Git</span>
+                            <div class="skill-level" data-level="90"></div>
                         </div>
                         <div class="skill-item">
+                            <i class="fas fa-paint-brush"></i>
                             <span>Adobe Creative Suite</span>
+                            <div class="skill-level" data-level="75"></div>
                         </div>
                         <div class="skill-item">
+                            <i class="fas fa-cube"></i>
                             <span>3D Modeling</span>
+                            <div class="skill-level" data-level="70"></div>
                         </div>
                     </div>
                 </div>
@@ -154,112 +370,188 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" class="projects-section">
         <div class="container">
-            <h2>Featured Projects</h2>
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="title-underline"></div>
+            </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="Project 1">
-                    <h3>E-Commerce Platform</h3>
-                    <p>Full-stack e-commerce solution with React, Node.js, and MongoDB</p>
-                    <div class="project-tech">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250" alt="Project 1">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#">View Project</a>
-                    <a href="#">GitHub</a>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">
+                            Full-stack e-commerce solution with React, Node.js, and MongoDB
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="Project 2">
-                    <h3>Task Management App</h3>
-                    <p>Collaborative task management with real-time updates and team features</p>
-                    <div class="project-tech">
-                        <span>Vue.js</span>
-                        <span>Firebase</span>
-                        <span>Socket.io</span>
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250" alt="Project 2">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#">View Project</a>
-                    <a href="#">GitHub</a>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">
+                            Collaborative task management with real-time updates and team features
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Socket.io</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="Project 3">
-                    <h3>3D Portfolio Website</h3>
-                    <p>Interactive 3D portfolio with Three.js and WebGL animations</p>
-                    <div class="project-tech">
-                        <span>Three.js</span>
-                        <span>WebGL</span>
-                        <span>GSAP</span>
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250" alt="Project 3">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#">View Project</a>
-                    <a href="#">GitHub</a>
+                    <div class="project-content">
+                        <h3 class="project-title">3D Portfolio Website</h3>
+                        <p class="project-description">
+                            Interactive 3D portfolio with Three.js and WebGL animations
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Three.js</span>
+                            <span class="tech-tag">WebGL</span>
+                            <span class="tech-tag">GSAP</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications">
+    <section id="certifications" class="certifications-section">
         <div class="container">
-            <h2>Certifications</h2>
+            <div class="section-header">
+                <h2 class="section-title">Certifications</h2>
+                <div class="title-underline"></div>
+            </div>
             <div class="certifications-grid">
                 <div class="cert-card">
-                    <h3>AWS Cloud Practitioner</h3>
-                    <p>Amazon Web Services</p>
-                    <span>2024</span>
+                    <div class="cert-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="cert-title">AWS Cloud Practitioner</h3>
+                    <p class="cert-issuer">Amazon Web Services</p>
+                    <span class="cert-date">2024</span>
                 </div>
                 <div class="cert-card">
-                    <h3>Google Analytics Certified</h3>
-                    <p>Google</p>
-                    <span>2023</span>
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 class="cert-title">Google Analytics Certified</h3>
+                    <p class="cert-issuer">Google</p>
+                    <span class="cert-date">2023</span>
                 </div>
                 <div class="cert-card">
-                    <h3>Microsoft Azure Fundamentals</h3>
-                    <p>Microsoft</p>
-                    <span>2023</span>
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="cert-title">Microsoft Azure Fundamentals</h3>
+                    <p class="cert-issuer">Microsoft</p>
+                    <span class="cert-date">2023</span>
                 </div>
                 <div class="cert-card">
-                    <h3>React Developer Certification</h3>
-                    <p>Meta</p>
-                    <span>2022</span>
+                    <div class="cert-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="cert-title">React Developer Certification</h3>
+                    <p class="cert-issuer">Meta</p>
+                    <span class="cert-date">2022</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p>Ready to bring your ideas to life? Let's work together!</p>
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Ready to bring your ideas to life? Let's work together!</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <h4>Email</h4>
-                        <p>sadia1997mostafa@email.com</p>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>sadia1997mostafa@email.com</p>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <h4>Phone</h4>
-                        <p>+880 123 456 7890</p>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+880 123 456 7890</p>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <h4>Location</h4>
-                        <p>Dhaka, Bangladesh</p>
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
                     </div>
                     <div class="social-links">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">GitHub</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <input type="text" name="subject" placeholder="Subject" required>
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit">Send Message</button>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
                     </form>
                 </div>
             </div>
@@ -267,11 +559,15 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Sadia Mostafa. All rights reserved.</p>
-            <p>Built with ❤️ and lots of ☕</p>
+            <div class="footer-content">
+                <p>&copy; 2025 Sadia Mostafa. All rights reserved.</p>
+                <p>Built with ❤️ and lots of ☕</p>
+            </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
