@@ -13,10 +13,10 @@
 	<div class="admin-container">
 		<h1>Admin Panel</h1>
 		<nav class="admin-nav">
-			<a href="add_project.php">Add Project</a>
-			<a href="add_education.php">Add Education</a>
-			<a href="add_skills.php">Add Skills</a>
-			<a href="add_certification.php">Add Certification</a>
+			<a href="manage_projects.php">Manage Projects</a>
+			<a href="manage_education.php">Manage Education</a>
+			<a href="manage_skills.php">Manage Skills</a>
+			<a href="manage_certification.php">Manage Certifications</a>
 		</nav>
 		<p>Welcome to the admin dashboard. Choose an option above to add new content.</p>
 	</div>
