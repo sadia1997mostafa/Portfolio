@@ -1,3 +1,7 @@
+<?php
+include 'backend/db.php';
+$result = $conn->query("SELECT * FROM certifications ORDER BY Id DESC");
+?>
 <!-- Certifications Section -->
 <section id="certifications" class="certifications-section">
     <div class="container">
@@ -6,38 +10,17 @@
             <div class="title-underline"></div>
         </div>
         <div class="certifications-grid">
+            <?php while($row = $result->fetch_assoc()): ?>
             <div class="cert-card">
                 <div class="cert-icon">
-                    <i class="fab fa-aws"></i>
+                    <img src="<?= htmlspecialchars($row['Image_url']) ?>" alt="Certification Image" style="width:48px;">
                 </div>
-                <h3 class="cert-title">AWS Cloud Practitioner</h3>
-                <p class="cert-issuer">Amazon Web Services</p>
-                <span class="cert-date">2024</span>
+                <h3 class="cert-title"><?= htmlspecialchars($row['Cert_name']) ?></h3>
+                <p class="cert-issuer"><?= htmlspecialchars($row['Organization']) ?></p>
+                <span class="cert-date"><?= htmlspecialchars($row['Date']) ?></span>
+                <p class="cert-description"><?= htmlspecialchars($row['Description']) ?></p>
             </div>
-            <div class="cert-card">
-                <div class="cert-icon">
-                    <i class="fab fa-google"></i>
-                </div>
-                <h3 class="cert-title">Google Analytics Certified</h3>
-                <p class="cert-issuer">Google</p>
-                <span class="cert-date">2023</span>
-            </div>
-            <div class="cert-card">
-                <div class="cert-icon">
-                    <i class="fab fa-microsoft"></i>
-                </div>
-                <h3 class="cert-title">Microsoft Azure Fundamentals</h3>
-                <p class="cert-issuer">Microsoft</p>
-                <span class="cert-date">2023</span>
-            </div>
-            <div class="cert-card">
-                <div class="cert-icon">
-                    <i class="fab fa-react"></i>
-                </div>
-                <h3 class="cert-title">React Developer Certification</h3>
-                <p class="cert-issuer">Meta</p>
-                <span class="cert-date">2022</span>
-            </div>
+            <?php endwhile; ?>
         </div>
     </div>
 </section>

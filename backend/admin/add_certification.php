@@ -1,5 +1,16 @@
-// Form to add certification
-// ...existing code...
+<?php
+include '../db.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	$name = $conn->real_escape_string($_POST['cert_name']);
+	$org = $conn->real_escape_string($_POST['organization']);
+	$date = $conn->real_escape_string($_POST['date']);
+	$desc = $conn->real_escape_string($_POST['description']);
+	$img = $conn->real_escape_string($_POST['image_url']);
+	$sql = "INSERT INTO certifications (Cert_name, Organization, Date, Description, Image_url) VALUES ('$name', '$org', '$date', '$desc', '$img')";
+	$conn->query($sql);
+	header("Location: manage_certification.php");
+	exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +35,9 @@
 
 			<label for="description">Description</label>
 			<textarea id="description" name="description" rows="3"></textarea>
+
+			<label for="image_url">Image URL</label>
+			<input type="url" id="image_url" name="image_url">
 
 			<button type="submit">Add Certification</button>
 		</form>
