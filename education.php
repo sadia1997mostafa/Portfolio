@@ -1,3 +1,7 @@
+<?php
+include 'backend/db.php';
+$result = $conn->query("SELECT * FROM education ORDER BY Year DESC");
+?>
 <!-- Education Section -->
 <section id="education" class="education-section">
     <div class="container">
@@ -5,31 +9,19 @@
             <h2 class="section-title">Education</h2>
             <div class="title-underline"></div>
         </div>
-        <div class="education-timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3 class="timeline-title">Bachelor of Computer Science</h3>
-                    <p class="timeline-institution">University Name</p>
-                    <span class="timeline-date">2020 - 2024</span>
-                    <p class="timeline-description">
-                        Specialized in Software Engineering and Web Development with a focus on 
-                        modern programming languages and frameworks.
-                    </p>
+        <div class="education-grid">
+            <?php while($row = $result->fetch_assoc()): ?>
+            <div class="education-card">
+                <div class="education-image">
+                    <img src="<?= htmlspecialchars($row['Image_url']) ?>" alt="Institution Logo">
+                </div>
+                <div class="education-content">
+                    <h3 class="degree"><?= htmlspecialchars($row['Degree']) ?></h3>
+                    <p class="institution"><?= htmlspecialchars($row['Institution']) ?></p>
+                    <span class="year"><?= htmlspecialchars($row['Year']) ?></span>
                 </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3 class="timeline-title">Higher Secondary Certificate</h3>
-                    <p class="timeline-institution">College Name</p>
-                    <span class="timeline-date">2018 - 2020</span>
-                    <p class="timeline-description">
-                        Completed with distinction in Science group, laying the foundation 
-                        for my technical career.
-                    </p>
-                </div>
-            </div>
+            <?php endwhile; ?>
         </div>
     </div>
 </section>

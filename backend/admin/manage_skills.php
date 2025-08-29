@@ -1,3 +1,16 @@
+<?php
+include '../db.php';
+
+// Delete record if delete request
+if (isset($_GET['delete'])) {
+    $id = intval($_GET['delete']);
+    $conn->query("DELETE FROM skills WHERE id=$id");
+    header("Location: manage_skills.php");
+    exit();
+}
+
+$result = $conn->query("SELECT * FROM skills ORDER BY id DESC");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,25 +21,34 @@
 <body>
 <div class="admin-container">
     <h1>Manage Skills</h1>
-    <a href="add_skills.php" class="admin-nav">Add New Skill</a>
-    <table style="width:100%;margin-top:24px;background:#1a1a1a;color:#fff;border-radius:12px;">
-        <tr style="background:#222;"><th>Skill</th><th>Level</th><th>Actions</th></tr>
-        <tr>
-            <td>HTML/CSS</td>
-            <td>Expert</td>
-            <td>
-                <a href="edit_skills.php?id=1" style="color:#ff6b6b;">Edit</a> |
-                <a href="#" style="color:#ff4757;" onclick="alert('Delete UI only!');return false;">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>JavaScript</td>
-            <td>Intermediate</td>
-            <td>
-                <a href="edit_skills.php?id=2" style="color:#ff6b6b;">Edit</a> |
-                <a href="#" style="color:#ff4757;" onclick="alert('Delete UI only!');return false;">Delete</a>
-            </td>
-        </tr>
+    <a href="add_skills.php" class="btn">Add New Skill</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Skill</th>
+                <th>Level</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php while($row = $result->fetch_assoc()): ?>
+            <tr>
+                <td><?= $row['Id'] ?></td>
+                <td><?= htmlspecialchars($row['Skill']) ?></td>
+                <td><?= htmlspecialchars($row['Level']) ?></td>
+                <td>
+                    <?= htmlspecialchars($row['Image_url']) ?><br>
+                    <img src="<?= htmlspecialchars($row['Image_url']) ?>" alt="skill" width="50">
+                </td>
+                <td>
+                    <a href="edit_skills.php?id=<?= $row['Id'] ?>">Edit</a> | 
+                    <a href="?delete=<?= $row['Id'] ?>" onclick="return confirm('Delete this skill?')">Delete</a>
+                </td>
+            </tr>
+        <?php endwhile; ?>
+        </tbody>
     </table>
 </div>
 </body>
