@@ -1,4 +1,16 @@
 <?php
+session_start();
+
+// Only check session
+if (!isset($_SESSION['admin'])) {
+    header("Location: ../../login.php");
+    exit();
+}
+?>
+
+
+
+<?php
 include '../db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

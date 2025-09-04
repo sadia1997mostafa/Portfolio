@@ -1,6 +1,15 @@
-// Admin Panel Home
-// ...existing code...
+<?php
+session_start();
+
+// Only check session
+if (!isset($_SESSION['admin'])) {
+    header("Location: ../../login.php");
+    exit();
+}
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +26,12 @@
 			<a href="manage_education.php">Manage Education</a>
 			<a href="manage_skills.php">Manage Skills</a>
 			<a href="manage_certification.php">Manage Certifications</a>
+			  <a href="contact_management.php">Manage Contacts</a>
 		</nav>
+		<div>
+			<a href="../../logout.php">Logout</a>
+
+		</div>
 		<p>Welcome to the admin dashboard. Choose an option above to add new content.</p>
 	</div>
 </body>

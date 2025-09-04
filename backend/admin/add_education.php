@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+// Only check session
+if (!isset($_SESSION['admin'])) {
+    header("Location: ../../login.php");
+    exit();
+}
+?>
+
+
+<?php
 // Add new education entry
 include '../db.php';
 

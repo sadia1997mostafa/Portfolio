@@ -1,4 +1,16 @@
 <?php
+session_start();
+
+// Only check session
+if (!isset($_SESSION['admin'])) {
+    header("Location: ../../login.php");
+    exit();
+}
+?>
+
+
+
+<?php
 include '../db.php';
 $id = intval($_GET['id']);
 $res = $conn->query("SELECT * FROM skills WHERE id=$id");
